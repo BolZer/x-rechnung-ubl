@@ -11,7 +11,9 @@ use Bolzer\XRechnungUbl\XRechnung3\Reader;
 test(
     'Reader parses the provided xml example accordingly and the resulting xml is identical to the provided',
     function (string $ublDocumentClass, string $pathToXmlExample) {
-        $xml = $this->reformatXml(file_get_contents($pathToXmlExample));
+        $xml = file_get_contents($pathToXmlExample);
+        $xml = $this->removeXmlMutates($xml);
+        $xml = $this->reformatXml($xml);
 
         $ublInvoice = Reader::create()->transformXmlToUblDocument($xml, $ublDocumentClass);
 

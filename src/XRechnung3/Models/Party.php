@@ -26,10 +26,10 @@ final class Party
     #[SerializedName('PartyName')]
     private ?PartyName $partyName = null;
 
-    #[Type(PostalAddress::class)]
+    #[Type(Address::class)]
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     #[SerializedName('PostalAddress')]
-    private ?PostalAddress $postalAddress = null;
+    private ?Address $postalAddress = null;
 
     #[Type('array<Bolzer\XRechnungUbl\XRechnung3\Models\PartyTaxScheme>')]
     #[SerializedName('PartyTaxScheme')]

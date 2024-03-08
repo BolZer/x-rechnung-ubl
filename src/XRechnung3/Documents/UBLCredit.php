@@ -6,6 +6,7 @@ namespace Bolzer\XRechnungUbl\XRechnung3\Documents;
 
 use Bolzer\XRechnungUbl\XRechnung3\Contracts\UBLDocument;
 use Bolzer\XRechnungUbl\XRechnung3\Models\AccountingSupplierParty;
+use Bolzer\XRechnungUbl\XRechnung3\Models\Delivery;
 use Bolzer\XRechnungUbl\XRechnung3\Models\InvoicePeriod;
 use Bolzer\XRechnungUbl\XRechnung3\Models\OrderReference;
 use Bolzer\XRechnungUbl\XRechnung3\Models\OriginatorDocumentReference;
@@ -96,4 +97,9 @@ final class UBLCredit implements UBLDocument
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     #[SerializedName('TaxRepresentativeParty')]
     private ?Party $taxRepresentativeParty = null;
+
+    #[Type(Delivery::class)]
+    #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[SerializedName('Delivery')]
+    private ?Delivery $delivery = null;
 }
