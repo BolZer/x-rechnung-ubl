@@ -1,0 +1,17 @@
+version: '3'
+
+tasks:
+  tests:
+    desc: Runs the PHP tests with the PEST runner
+    cmds:
+      - ./vendor/bin/pest
+
+  lint:
+    desc: Lints the PHP files with PHPStan
+    cmds:
+      - ./vendor/bin/phpstan analyse
+
+  fix-cs:
+    desc: Fixes the PHP files with PHP-CS-Fixer
+    cmds:
+      - ./vendor/bin/php-cs-fixer fix src

@@ -1,0 +1,29 @@
+{
+    "name": "bolzer/x-rechnung-ubl",
+    "description": "A package to read and create XRechnung in the UBL syntax",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Bolzer\\XRechnungUbl\\": "src/",
+            "Bolzer\\XRechnungUblTests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jan Nöhles",
+            "email": "jan.noehles@easybill.de"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require-dev": {
+        "pestphp/pest": "^2.34",
+        "phpstan/phpstan": "^1.10",
+        "friendsofphp/php-cs-fixer": "^3.51"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
