@@ -14,4 +14,4 @@ tasks:
   fix-cs:
     desc: Fixes the PHP files with PHP-CS-Fixer
     cmds:
-      - ./vendor/bin/php-cs-fixer fix src
+      - ./vendor/bin/php-cs-fixer fix
