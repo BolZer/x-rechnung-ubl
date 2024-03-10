@@ -23,6 +23,8 @@ test(
         $formattedXmlFromUblInvoice = $this->reformatXml($xmlFromUblInvoice);
 
         $this->assertSame($xml, $formattedXmlFromUblInvoice);
+
+        //$this->validateXmlAgainstSchema($xml);
     }
 )->with([
     [
@@ -263,6 +265,82 @@ test(
     ],
     [
         'ublDocumentClass' => UBLInvoice::class,
+        'exampleFile' => __DIR__ . '/Examples/ubl-inv-br-de-1-test-1-identity.xml',
+    ],
+    [
+        'ublDocumentClass' => UBLInvoice::class,
+        'exampleFile' => __DIR__ . '/Examples/ubl-inv-br-de-2-test-103-identity.xml',
+    ],
+    [
+        'ublDocumentClass' => UBLInvoice::class,
+        'exampleFile' => __DIR__ . '/Examples/ubl-inv-br-de-16-negative-test-bt-95-26-code-Z.xml',
+    ],
+    [
+        'ublDocumentClass' => UBLInvoice::class,
+        'exampleFile' => __DIR__ . '/Examples/ubl-inv-br-de-16-test-bt-95-48-code-Z.xml',
+    ],
+    [
+        'ublDocumentClass' => UBLInvoice::class,
         'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r001-348-identity.xml',
+    ],
+    [
+        'ublDocumentClass' => UBLInvoice::class,
+        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r040-393-code--0.02.xml',
+    ],
+    [
+        'ublDocumentClass' => UBLInvoice::class,
+        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r040-allowance-362-identity.xml',
+    ],
+    [
+        'ublDocumentClass' => UBLInvoice::class,
+        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r041-394-identity.xml',
+    ],
+    [
+        'ublDocumentClass' => UBLInvoice::class,
+        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r043-405-code-1234.xml',
+    ],
+    [
+        'ublDocumentClass' => UBLInvoice::class,
+        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r055-without-bt6-450-identity.xml',
+    ],
+    [
+        'ublDocumentClass' => UBLInvoice::class,
+        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r120-483-code-40.02.xml',
+    ],
+    [
+        'ublDocumentClass' => UBLInvoice::class,
+        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r120-484-code-39.98.xml',
+    ],
+    [
+        'ublDocumentClass' => UBLInvoice::class,
+        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r120-485-code-40.03.xml',
+    ],
+    [
+        'ublDocumentClass' => UBLInvoice::class,
+        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r120-486-code-39.97.xml',
+    ],
+    [
+        'ublDocumentClass' => UBLInvoice::class,
+        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r121-487-identity.xml',
+    ],
+    [
+        'ublDocumentClass' => UBLInvoice::class,
+        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r121-488-code-0.xml',
+    ],
+    [
+        'ublDocumentClass' => UBLInvoice::class,
+        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r121-489-code--2.xml',
+    ],
+    [
+        'ublDocumentClass' => UBLInvoice::class,
+        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r130-490-identity.xml',
+    ],
+    [
+        'ublDocumentClass' => UBLInvoice::class,
+        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r130-491-code-XPK.xml',
+    ],
+    [
+        'ublDocumentClass' => UBLInvoice::class,
+        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r130-492-code-XRO.xml',
     ],
 ]);

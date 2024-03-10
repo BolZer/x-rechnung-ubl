@@ -36,10 +36,10 @@ abstract class AbstractDocumentLine
     #[SerializedName('OrderLineReference')]
     private ?OrderLineReference $orderLineReference = null;
 
-    #[Type(AllowanceCharge::class)]
-    #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[Type('array<Bolzer\XRechnungUbl\XRechnung3\Models\AllowanceCharge>')]
     #[SerializedName('AllowanceCharge')]
-    private ?AllowanceCharge $allowanceCharge = null;
+    #[XmlList(entry: 'AllowanceCharge', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    private ?array $allowanceCharge = null;
 
     #[Type('array<Bolzer\XRechnungUbl\XRechnung3\Models\Item>')]
     #[SerializedName('Item')]

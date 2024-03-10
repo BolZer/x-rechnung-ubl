@@ -6,7 +6,9 @@ namespace Bolzer\XRechnungUbl\XRechnung3;
 
 final class Validator
 {
-    public function validateAgainstXsd(string $xml, string $schemaFile): ?string
+    public const SCHEMA = __DIR__ . '/Schema/xrechnung-semantic-model.xsd';
+
+    public function validateAgainstXsdSchema(string $xml): ?string
     {
         $domDoc = new \DOMDocument();
         $domDoc->loadXML($xml);
@@ -15,7 +17,7 @@ final class Validator
             libxml_use_internal_errors(true);
             libxml_clear_errors();
 
-            if ($domDoc->schemaValidate($schemaFile)) {
+            if ($domDoc->schemaValidate(self::SCHEMA)) {
                 return null;
             }
 

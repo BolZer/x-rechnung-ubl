@@ -8,13 +8,13 @@ use Bolzer\XRechnungUbl\XRechnung3\Contracts\UBLDocument;
 use Bolzer\XRechnungUbl\XRechnung3\Models\AccountingParty;
 use Bolzer\XRechnungUbl\XRechnung3\Models\AllowanceCharge;
 use Bolzer\XRechnungUbl\XRechnung3\Models\Delivery;
+use Bolzer\XRechnungUbl\XRechnung3\Models\DocumentReference;
 use Bolzer\XRechnungUbl\XRechnung3\Models\LegalMonetaryTotal;
 use Bolzer\XRechnungUbl\XRechnung3\Models\OrderReference;
 use Bolzer\XRechnungUbl\XRechnung3\Models\Party;
 use Bolzer\XRechnungUbl\XRechnung3\Models\PaymentMeans;
 use Bolzer\XRechnungUbl\XRechnung3\Models\PaymentTerms;
 use Bolzer\XRechnungUbl\XRechnung3\Models\Period;
-use Bolzer\XRechnungUbl\XRechnung3\Models\Reference;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
@@ -67,10 +67,10 @@ abstract class UBLAbstractDocument implements UBLDocument
     #[SerializedName('OrderReference')]
     private ?OrderReference $orderReference = null;
 
-    #[Type(Reference::class)]
+    #[Type(DocumentReference::class)]
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     #[SerializedName('OriginatorDocumentReference')]
-    private ?Reference $originatorDocumentReference = null;
+    private ?DocumentReference $originatorDocumentReference = null;
 
     #[Type(AccountingParty::class)]
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]

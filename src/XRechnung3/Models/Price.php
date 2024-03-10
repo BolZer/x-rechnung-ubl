@@ -14,4 +14,9 @@ final class Price
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     #[SerializedName('PriceAmount')]
     private ?Amount $priceAmount = null;
+
+    #[Type(Quantity::class)]
+    #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[SerializedName('BaseQuantity')]
+    private ?Quantity $baseQuantity = null;
 }

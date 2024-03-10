@@ -10,10 +10,10 @@ use JMS\Serializer\Annotation\XmlElement;
 
 final class AllowanceCharge
 {
-    #[Type('bool')]
+    #[Type('string')]
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     #[SerializedName('ChargeIndicator')]
-    private ?bool $chargeIndicator = null;
+    private ?string $chargeIndicator = null;
 
     #[Type('string')]
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Bolzer\XRechnungUbl\XRechnung3\Documents;
 
-use Bolzer\XRechnungUbl\XRechnung3\Models\Reference;
+use Bolzer\XRechnungUbl\XRechnung3\Models\DocumentReference;
 use JMS\Serializer\Annotation\AccessorOrder;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
@@ -33,6 +33,7 @@ use JMS\Serializer\Annotation\XmlRoot;
     'orderReference',
     'originatorDocumentReference',
     'contractDocumentReference',
+    'additionalDocumentReference',
     'projectReference',
     'accountingSupplierParty',
     'accountingCustomerParty',
@@ -63,15 +64,20 @@ final class UBLInvoice  extends UBLAbstractDocument
     #[SerializedName('TaxPointDate')]
     private ?string $taxPointDate = null;
 
-    #[Type(Reference::class)]
+    #[Type(DocumentReference::class)]
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     #[SerializedName('ContractDocumentReference')]
-    private ?Reference $contractDocumentReference = null;
+    private ?DocumentReference $contractDocumentReference = null;
 
-    #[Type(Reference::class)]
+    #[Type(DocumentReference::class)]
+    #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[SerializedName('AdditionalDocumentReference')]
+    private ?DocumentReference $additionalDocumentReference = null;
+
+    #[Type(DocumentReference::class)]
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     #[SerializedName('ProjectReference')]
-    private ?Reference $projectReference = null;
+    private ?DocumentReference $projectReference = null;
 
     #[Type('array<Bolzer\XRechnungUbl\XRechnung3\Models\InvoiceLine>')]
     #[SerializedName('InvoiceLine')]
