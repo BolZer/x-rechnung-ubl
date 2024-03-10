@@ -16,12 +16,19 @@ final class Reader
 
     /**
      * @template T of UBLAbstractDocument
+     * @throws \RuntimeException
      * @param class-string<T> $targetClass
      * @return T
      */
     public function transformXmlToUblDocument(string $xml, string $targetClass): mixed
     {
-        return $this->serializer->deserialize($xml, $targetClass, 'xml');
+        $object = $this->serializer->deserialize($xml, $targetClass, 'xml');
+
+        if (!$object instanceof $targetClass) {
+            throw new \RuntimeException(sprintf('Deserialized object is not an instance of %s', $targetClass));
+        }
+
+        return $object;
     }
 
     public static function create(): Reader
