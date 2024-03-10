@@ -4,27 +4,53 @@ declare(strict_types=1);
 
 namespace Bolzer\XRechnungUbl\XRechnung3;
 
+use GuzzleHttp\Client;
+use GuzzleHttp\RequestOptions;
+
 final class Validator
 {
-    public const SCHEMA = __DIR__ . '/Schema/xrechnung-semantic-model.xsd';
-
-    public function validateAgainstXsdSchema(string $xml): ?string
+    public function validate(string $xml): ?string
     {
-        $domDoc = new \DOMDocument();
-        $domDoc->loadXML($xml);
+        $httpClient = new Client();
 
-        try {
-            libxml_use_internal_errors(true);
-            libxml_clear_errors();
+        $response = $httpClient->request('POST', 'http://localhost:8080', [
+            RequestOptions::HEADERS => [
+                'Content-Type' => 'application/xml',
+            ],
+            RequestOptions::BODY => $xml,
+            RequestOptions::TIMEOUT => 3,
+            RequestOptions::CONNECT_TIMEOUT => 3,
+            RequestOptions::HTTP_ERRORS => false,
+        ]);
 
-            if ($domDoc->schemaValidate(self::SCHEMA)) {
-                return null;
-            }
-
-            return implode("\n", array_column(libxml_get_errors(), 'message'));
-        } finally {
-            libxml_use_internal_errors(false);
-            libxml_clear_errors();
+        if (200 === $response->getStatusCode()) {
+            return null;
         }
+
+        return implode(', ', $this->extractErrors($response->getBody()->getContents()));
+    }
+
+    /** @return array<string>  */
+    private function extractErrors(string $report): array
+    {
+        $doc = new \DOMDocument();
+
+        $doc->loadXML($report);
+
+        $docXpath = new \DOMXPath($doc);
+
+        $noScenarioMatched = $docXpath->query('//rep:noScenarioMatched');
+
+        if ($noScenarioMatched->count() > 0) {
+            return ['No validation scenario matched. (Unsupported document type)'];
+        }
+
+        $errorMsgElems = $docXpath->query('//rep:validationStepResult/rep:message');
+
+        if (is_iterable($errorMsgElems)) {
+            return array_map(fn (\DOMNode $node) => $node->textContent, iterator_to_array($errorMsgElems));
+        }
+
+        throw new \RuntimeException('could not parse validation errors');
     }
 }

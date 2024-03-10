@@ -6,13 +6,13 @@ namespace Bolzer\XRechnungUblTests\Traits;
 
 use Bolzer\XRechnungUbl\XRechnung3\Validator;
 
-trait SchemaValidatorTrait
+trait ValidatorTrait
 {
-    public function validateXmlAgainstSchema(string $xml): void
+    public function validateWithKositValidator(string $xml): void
     {
         $validator = new Validator();
 
-        $errors = $validator->validateAgainstXsdSchema($xml);
+        $errors = $validator->validate($xml);
 
         self::assertNull($errors, $errors ?? '');
     }

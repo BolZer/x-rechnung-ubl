@@ -1,0 +1,7 @@
+version: "3.9"
+
+services:
+  validator_202309:
+    image: 'easybill/zugferd-validator202309:v0.0.58'
+    ports:
+      - '8080:8080'

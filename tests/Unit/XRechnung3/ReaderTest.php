@@ -24,7 +24,7 @@ test(
 
         $this->assertSame($xml, $formattedXmlFromUblInvoice);
 
-        //$this->validateXmlAgainstSchema($xml);
+        $this->validateWithKositValidator($xml);
     }
 )->with([
     [
