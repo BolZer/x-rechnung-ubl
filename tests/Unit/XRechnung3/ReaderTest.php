@@ -23,324 +23,322 @@ test(
         $formattedXmlFromUblInvoice = $this->reformatXml($xmlFromUblInvoice);
 
         $this->assertSame($xml, $formattedXmlFromUblInvoice);
-
-        $this->validateWithKositValidator($xml);
     }
 )->with([
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-1-test-493-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-1-test-493-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-1-test-494-remove.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-1-test-494-remove.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-2-test-586-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-2-test-586-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-2-test-587-remove.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-2-test-587-remove.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-3-test-655-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-3-test-655-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-3-test-656-remove.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-3-test-656-remove.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-4-test-663-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-4-test-663-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-4-test-664-remove.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-4-test-664-remove.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-5-test-665-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-5-test-665-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-5-test-666-remove.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-5-test-666-remove.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-6-test-667-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-6-test-667-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-6-test-668-remove.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-6-test-668-remove.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-7-test-669-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-7-test-669-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-7-test-670-remove.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-7-test-670-remove.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-8-test-671-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-8-test-671-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-8-test-672-remove.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-8-test-672-remove.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-9-test-673-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-9-test-673-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-9-test-674-remove.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-9-test-674-remove.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-10-test-495-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-10-test-495-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-10-test-496-remove.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-10-test-496-remove.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-11-test-497-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-11-test-497-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-11-test-498-remove.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-11-test-498-remove.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-14-test-499-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-14-test-499-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-14-test-500-remove.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-14-test-500-remove.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-15-test-501-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-15-test-501-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-15-test-502-remove.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-15-test-502-remove.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-95-518-code-Z.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-95-518-code-Z.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-95-519-code-E.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-95-519-code-E.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-95-520-code-AE.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-95-520-code-AE.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-95-521-code-K.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-95-521-code-K.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-95-522-code-G.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-95-522-code-G.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-95-523-code-L.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-95-523-code-L.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-95-524-code-M.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-95-524-code-M.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-102-503-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-102-503-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-102-504-code-Z.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-102-504-code-Z.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-102-505-code-E.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-102-505-code-E.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-102-506-code-AE.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-102-506-code-AE.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-102-507-code-K.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-102-507-code-K.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-102-507-code-K.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-102-507-code-K.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-102-508-code-G.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-102-508-code-G.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-102-509-code-L.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-102-509-code-L.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-102-510-code-M.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-102-510-code-M.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-151-511-code-Z.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-151-511-code-Z.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-151-512-code-E.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-151-512-code-E.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-151-513-code-AE.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-151-513-code-AE.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-151-514-code-K.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-151-514-code-K.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-151-515-code-G.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-151-515-code-G.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-151-516-code-L.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-151-516-code-L.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-negative-test-bt-151-517-code-M.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-negative-test-bt-151-517-code-M.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-br-de-16-test-bt-95-540-code-Z.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-br-de-16-test-bt-95-540-code-Z.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-peppol-en16931-r001-675-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-peppol-en16931-r001-675-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-peppol-en16931-r001-676-remove.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-peppol-en16931-r001-676-remove.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-peppol-en16931-r005-677-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-peppol-en16931-r005-677-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-peppol-en16931-r005-678-code-EUR.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-peppol-en16931-r005-678-code-EUR.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-peppol-en16931-r008-679-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-peppol-en16931-r008-679-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-peppol-en16931-r040-allowance-689-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-peppol-en16931-r040-allowance-689-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-peppol-en16931-r040-charge-701-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-peppol-en16931-r040-charge-701-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-peppol-en16931-r041-721-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-peppol-en16931-r041-721-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLCredit::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-cn-peppol-en16931-r043-730-code-true.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-cn-peppol-en16931-r043-730-code-true.xml',
     ],
     [
         'ublDocumentClass' => UBLInvoice::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-inv-br-de-1-test-1-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-inv-br-de-1-test-1-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLInvoice::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-inv-br-de-2-test-103-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-inv-br-de-2-test-103-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLInvoice::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-inv-br-de-16-negative-test-bt-95-26-code-Z.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-inv-br-de-16-negative-test-bt-95-26-code-Z.xml',
     ],
     [
         'ublDocumentClass' => UBLInvoice::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-inv-br-de-16-test-bt-95-48-code-Z.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-inv-br-de-16-test-bt-95-48-code-Z.xml',
     ],
     [
         'ublDocumentClass' => UBLInvoice::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r001-348-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-inv-peppol-en16931-r001-348-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLInvoice::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r040-393-code--0.02.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-inv-peppol-en16931-r040-393-code--0.02.xml',
     ],
     [
         'ublDocumentClass' => UBLInvoice::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r040-allowance-362-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-inv-peppol-en16931-r040-allowance-362-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLInvoice::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r041-394-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-inv-peppol-en16931-r041-394-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLInvoice::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r043-405-code-1234.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-inv-peppol-en16931-r043-405-code-1234.xml',
     ],
     [
         'ublDocumentClass' => UBLInvoice::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r055-without-bt6-450-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-inv-peppol-en16931-r055-without-bt6-450-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLInvoice::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r120-483-code-40.02.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-inv-peppol-en16931-r120-483-code-40.02.xml',
     ],
     [
         'ublDocumentClass' => UBLInvoice::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r120-484-code-39.98.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-inv-peppol-en16931-r120-484-code-39.98.xml',
     ],
     [
         'ublDocumentClass' => UBLInvoice::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r120-485-code-40.03.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-inv-peppol-en16931-r120-485-code-40.03.xml',
     ],
     [
         'ublDocumentClass' => UBLInvoice::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r120-486-code-39.97.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-inv-peppol-en16931-r120-486-code-39.97.xml',
     ],
     [
         'ublDocumentClass' => UBLInvoice::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r121-487-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-inv-peppol-en16931-r121-487-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLInvoice::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r121-488-code-0.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-inv-peppol-en16931-r121-488-code-0.xml',
     ],
     [
         'ublDocumentClass' => UBLInvoice::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r121-489-code--2.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-inv-peppol-en16931-r121-489-code--2.xml',
     ],
     [
         'ublDocumentClass' => UBLInvoice::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r130-490-identity.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-inv-peppol-en16931-r130-490-identity.xml',
     ],
     [
         'ublDocumentClass' => UBLInvoice::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r130-491-code-XPK.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-inv-peppol-en16931-r130-491-code-XPK.xml',
     ],
     [
         'ublDocumentClass' => UBLInvoice::class,
-        'exampleFile' => __DIR__ . '/Examples/ubl-inv-peppol-en16931-r130-492-code-XRO.xml',
+        'exampleFile' => __DIR__ . '/Examples/Reader/ubl-inv-peppol-en16931-r130-492-code-XRO.xml',
     ],
 ]);

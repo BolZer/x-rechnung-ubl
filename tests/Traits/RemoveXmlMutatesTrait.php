@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-namespace Traits;
-
 namespace Bolzer\XRechnungUblTests\Traits;
 
 trait RemoveXmlMutatesTrait
