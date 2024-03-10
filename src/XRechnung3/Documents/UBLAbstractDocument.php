@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Bolzer\XRechnungUbl\XRechnung3\Documents;
 
-use Bolzer\XRechnungUbl\XRechnung3\Contracts\UBLDocument;
 use Bolzer\XRechnungUbl\XRechnung3\Models\AccountingParty;
 use Bolzer\XRechnungUbl\XRechnung3\Models\AllowanceCharge;
 use Bolzer\XRechnungUbl\XRechnung3\Models\Delivery;
@@ -21,7 +20,7 @@ use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
 use JMS\Serializer\Annotation\XmlList;
 
-abstract class UBLAbstractDocument implements UBLDocument
+abstract class UBLAbstractDocument
 {
     #[Type('string')]
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]

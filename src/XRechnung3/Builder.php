@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Bolzer\XRechnungUbl\XRechnung3;
 
-use Bolzer\XRechnungUbl\XRechnung3\Contracts\UBLDocument;
+use Bolzer\XRechnungUbl\XRechnung3\Documents\UBLAbstractDocument;
 use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\SerializerInterface;
 
@@ -14,7 +14,7 @@ final class Builder
         private readonly SerializerInterface $serializer,
     ) {}
 
-    public function transformUblDocumentToXml(UBLDocument $UBLDocument): string
+    public function transformUblDocumentToXml(UBLAbstractDocument $UBLDocument): string
     {
         return $this->serializer->serialize($UBLDocument, 'xml');
     }

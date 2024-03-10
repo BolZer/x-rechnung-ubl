@@ -16,9 +16,9 @@ test(
         $xml = $this->removeXmlMutates($xml);
         $xml = $this->reformatXml($xml);
 
-        $ublInvoice = Reader::create()->transformXmlToUblDocument($xml, $ublDocumentClass);
+        $ublDocument = Reader::create()->transformXmlToUblDocument($xml, $ublDocumentClass);
 
-        $xmlFromUblInvoice = Builder::create()->transformUblDocumentToXml($ublInvoice);
+        $xmlFromUblInvoice = Builder::create()->transformUblDocumentToXml($ublDocument);
 
         $formattedXmlFromUblInvoice = $this->reformatXml($xmlFromUblInvoice);
 

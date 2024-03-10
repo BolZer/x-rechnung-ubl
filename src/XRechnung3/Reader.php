@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Bolzer\XRechnungUbl\XRechnung3;
 
-use Bolzer\XRechnungUbl\XRechnung3\Contracts\UBLDocument;
+use Bolzer\XRechnungUbl\XRechnung3\Documents\UBLAbstractDocument;
 use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\SerializerInterface;
 
@@ -15,7 +15,7 @@ final class Reader
     ) {}
 
     /**
-     * @template T of UBLDocument
+     * @template T of UBLAbstractDocument
      * @param class-string<T> $targetClass
      * @return T
      */
