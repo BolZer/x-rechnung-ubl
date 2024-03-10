@@ -9,6 +9,7 @@ use Bolzer\XRechnungUbl\XRechnung3\Models\AccountingSupplierParty;
 use Bolzer\XRechnungUbl\XRechnung3\Models\AllowanceCharge;
 use Bolzer\XRechnungUbl\XRechnung3\Models\Delivery;
 use Bolzer\XRechnungUbl\XRechnung3\Models\InvoicePeriod;
+use Bolzer\XRechnungUbl\XRechnung3\Models\LegalMonetaryTotal;
 use Bolzer\XRechnungUbl\XRechnung3\Models\OrderReference;
 use Bolzer\XRechnungUbl\XRechnung3\Models\OriginatorDocumentReference;
 use Bolzer\XRechnungUbl\XRechnung3\Models\Party;
@@ -126,4 +127,9 @@ final class UBLCredit implements UBLDocument
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     #[SerializedName('TaxTotal')]
     private ?TaxTotal $taxTotal = null;
+
+    #[Type(LegalMonetaryTotal::class)]
+    #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[SerializedName('LegalMonetaryTotal')]
+    private ?LegalMonetaryTotal $legalMonetaryTotal = null;
 }
