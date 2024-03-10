@@ -9,6 +9,7 @@ use JMS\Serializer\Annotation\AccessorOrder;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
+use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -71,4 +72,9 @@ final class UBLInvoice  extends UBLAbstractDocument
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     #[SerializedName('ProjectReference')]
     private ?Reference $projectReference = null;
+
+    #[Type('array<Bolzer\XRechnungUbl\XRechnung3\Models\InvoiceLine>')]
+    #[SerializedName('InvoiceLine')]
+    #[XmlList(entry: 'InvoiceLine', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    private ?array $invoiceLine = null;
 }

@@ -12,7 +12,7 @@ use JMS\Serializer\Annotation\XmlElement;
 #[AccessorOrder(order: 'custom', custom: [
     'endpointId',
     'note',
-    'creditedQuantity',
+    'invoicedQuantity',
     'lineExtensionAmount',
     'invoicePeriod',
     'orderLineReference',
@@ -20,10 +20,10 @@ use JMS\Serializer\Annotation\XmlElement;
     'item',
     'price',
 ])]
-final class CreditNoteLine extends AbstractDocumentLine
+final class InvoiceLine extends AbstractDocumentLine
 {
     #[Type(Quantity::class)]
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
-    #[SerializedName('CreditedQuantity')]
-    private ?Quantity $creditedQuantity = null;
+    #[SerializedName('InvoicedQuantity')]
+    private ?Quantity $invoicedQuantity = null;
 }
