@@ -8,17 +8,18 @@ use Bolzer\XRechnungUbl\XRechnung3\Contracts\UBLDocument;
 use Bolzer\XRechnungUbl\XRechnung3\Models\AccountingSupplierParty;
 use Bolzer\XRechnungUbl\XRechnung3\Models\AllowanceCharge;
 use Bolzer\XRechnungUbl\XRechnung3\Models\Delivery;
-use Bolzer\XRechnungUbl\XRechnung3\Models\InvoicePeriod;
 use Bolzer\XRechnungUbl\XRechnung3\Models\LegalMonetaryTotal;
 use Bolzer\XRechnungUbl\XRechnung3\Models\OrderReference;
 use Bolzer\XRechnungUbl\XRechnung3\Models\OriginatorDocumentReference;
 use Bolzer\XRechnungUbl\XRechnung3\Models\Party;
 use Bolzer\XRechnungUbl\XRechnung3\Models\PaymentMeans;
 use Bolzer\XRechnungUbl\XRechnung3\Models\PaymentTerms;
+use Bolzer\XRechnungUbl\XRechnung3\Models\Period;
 use Bolzer\XRechnungUbl\XRechnung3\Models\TaxTotal;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
+use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -68,10 +69,10 @@ final class UBLCredit implements UBLDocument
     #[SerializedName('BuyerReference')]
     private ?string $buyerReference = null;
 
-    #[Type(InvoicePeriod::class)]
+    #[Type(Period::class)]
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     #[SerializedName('InvoicePeriod')]
-    private ?InvoicePeriod $invoicePeriod = null;
+    private ?Period $invoicePeriod = null;
 
     #[Type(OrderReference::class)]
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
@@ -132,4 +133,9 @@ final class UBLCredit implements UBLDocument
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     #[SerializedName('LegalMonetaryTotal')]
     private ?LegalMonetaryTotal $legalMonetaryTotal = null;
+
+    #[Type('array<Bolzer\XRechnungUbl\XRechnung3\Models\CreditNoteLine>')]
+    #[SerializedName('CreditNoteLine')]
+    #[XmlList(entry: 'CreditNoteLine', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    private ?array $creditNoteLine = null;
 }
