@@ -16,7 +16,7 @@ final class Amount
     #[SerializedName('currencyID')]
     public ?string $currencyID = null;
 
-    #[Type('int')]
+    #[Type('string')]
     #[XmlValue(cdata: false)]
-    public ?int $value = null;
+    public ?string $value = null;
 }

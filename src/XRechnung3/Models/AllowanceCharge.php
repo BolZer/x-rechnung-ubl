@@ -39,4 +39,9 @@ final class AllowanceCharge
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     #[SerializedName('BaseAmount')]
     private ?Amount $baseAmount = null;
+
+    #[Type(TaxCategory::class)]
+    #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[SerializedName('TaxCategory')]
+    private ?TaxCategory $taxCategory = null;
 }

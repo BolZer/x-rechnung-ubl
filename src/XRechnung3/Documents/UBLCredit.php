@@ -14,6 +14,7 @@ use Bolzer\XRechnungUbl\XRechnung3\Models\OriginatorDocumentReference;
 use Bolzer\XRechnungUbl\XRechnung3\Models\Party;
 use Bolzer\XRechnungUbl\XRechnung3\Models\PaymentMeans;
 use Bolzer\XRechnungUbl\XRechnung3\Models\PaymentTerms;
+use Bolzer\XRechnungUbl\XRechnung3\Models\TaxTotal;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
@@ -120,4 +121,9 @@ final class UBLCredit implements UBLDocument
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     #[SerializedName('AllowanceCharge')]
     private ?AllowanceCharge $allowanceCharge = null;
+
+    #[Type(TaxTotal::class)]
+    #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[SerializedName('TaxTotal')]
+    private ?TaxTotal $taxTotal = null;
 }
