@@ -14,11 +14,11 @@ final class Amount
     #[Type('string')]
     #[XmlAttribute]
     #[SerializedName('currencyID')]
-    public ?string $currencyID = null;
+    private ?string $currencyID = null;
 
     #[Type('string')]
     #[XmlValue(cdata: false)]
-    public ?string $value = null;
+    private ?string $value = null;
 
     public function getCurrencyID(): ?string
     {

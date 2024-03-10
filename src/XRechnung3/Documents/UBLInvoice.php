@@ -14,11 +14,10 @@ use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlRoot;
 
-#[XmlRoot('Invoice')]
+#[XmlRoot('ubl:Invoice')]
 #[XmlNamespace(uri: 'urn:oasis:names:specification:ubl:schema:xsd:Invoice-2', prefix: '')]
 #[XmlNamespace(uri: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', prefix: 'cac')]
 #[XmlNamespace(uri: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', prefix: 'cbc')]
-#[XmlNamespace(uri: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2', prefix: 'cec')]
 #[AccessorOrder(order: 'custom', custom: [
     'customizationId',
     'profileId',

@@ -10,7 +10,7 @@ use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
 
 #[AccessorOrder(order: 'custom', custom: [
-    'endpointId',
+    'id',
     'note',
     'invoicedQuantity',
     'lineExtensionAmount',

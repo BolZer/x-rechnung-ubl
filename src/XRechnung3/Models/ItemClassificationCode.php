@@ -14,11 +14,11 @@ final class ItemClassificationCode
     #[Type('string')]
     #[XmlAttribute]
     #[SerializedName('listID')]
-    public ?string $listId = null;
+    private ?string $listId = null;
 
     #[Type('string')]
     #[XmlValue(cdata: false)]
-    public ?string $value = null;
+    private ?string $value = null;
 
     public function getListId(): ?string
     {

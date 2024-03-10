@@ -14,11 +14,11 @@ final class Id
     #[Type('string')]
     #[XmlAttribute]
     #[SerializedName('schemeID')]
-    public ?string $schemeID = null;
+    private ?string $schemeID = null;
 
     #[Type('string')]
     #[XmlValue(cdata: false)]
-    public ?string $value = null;
+    private ?string $value = null;
 
     public function getSchemeID(): ?string
     {

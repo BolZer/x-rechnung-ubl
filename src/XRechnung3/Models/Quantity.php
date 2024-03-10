@@ -14,11 +14,11 @@ final class Quantity
     #[Type('string')]
     #[XmlAttribute]
     #[SerializedName('unitCode')]
-    public ?string $unitCode = null;
+    private ?string $unitCode = null;
 
     #[Type('string')]
     #[XmlValue(cdata: false)]
-    public ?string $value = null;
+    private ?string $value = null;
 
     public function getUnitCode(): ?string
     {

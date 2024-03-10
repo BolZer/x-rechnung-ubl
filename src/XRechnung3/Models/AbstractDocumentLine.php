@@ -14,7 +14,7 @@ abstract class AbstractDocumentLine
     #[Type(Id::class)]
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     #[SerializedName('ID')]
-    private ?Id $endpointId = null;
+    private ?Id $id = null;
 
     #[Type('string')]
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
@@ -53,14 +53,14 @@ abstract class AbstractDocumentLine
     #[SerializedName('Price')]
     private ?Price $price = null;
 
-    public function getEndpointId(): ?Id
+    public function getId(): ?Id
     {
-        return $this->endpointId;
+        return $this->id;
     }
 
-    public function setEndpointId(?Id $endpointId): AbstractDocumentLine
+    public function setId(?Id $id): AbstractDocumentLine
     {
-        $this->endpointId = $endpointId;
+        $this->id = $id;
         return $this;
     }
 
