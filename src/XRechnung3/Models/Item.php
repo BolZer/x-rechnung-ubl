@@ -25,6 +25,11 @@ final class Item
     #[SerializedName('SellersItemIdentification')]
     private ?SellersItemIdentification $sellersItemIdentification = null;
 
+    #[Type(CommodityClassification::class)]
+    #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[SerializedName('CommodityClassification')]
+    private ?CommodityClassification $commodityClassification = null;
+
     #[Type(TaxCategory::class)]
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     #[SerializedName('ClassifiedTaxCategory')]

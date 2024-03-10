@@ -45,4 +45,9 @@ final class CreditNoteLine
     #[SerializedName('Item')]
     #[XmlList(entry: 'Item', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private ?array $item = null;
+
+    #[Type(Price::class)]
+    #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[SerializedName('Price')]
+    private ?Price $price = null;
 }
