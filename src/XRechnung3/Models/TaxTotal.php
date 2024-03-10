@@ -7,6 +7,7 @@ namespace Bolzer\XRechnungUbl\XRechnung3\Models;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
+use JMS\Serializer\Annotation\XmlList;
 
 final class TaxTotal
 {
@@ -15,8 +16,8 @@ final class TaxTotal
     #[SerializedName('TaxAmount')]
     private ?Amount $taxAmount = null;
 
-    #[Type(TaxSubtotal::class)]
-    #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[Type('array<Bolzer\XRechnungUbl\XRechnung3\Models\TaxSubtotal>')]
     #[SerializedName('TaxSubtotal')]
-    private ?TaxSubtotal $taxSubtotal = null;
+    #[XmlList(entry: 'TaxSubtotal', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    private ?array $taxSubtotal = null;
 }

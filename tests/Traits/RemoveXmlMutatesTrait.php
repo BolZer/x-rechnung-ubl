@@ -10,6 +10,6 @@ trait RemoveXmlMutatesTrait
 {
     public static function removeXmlMutates(string $xml): string
     {
-        return preg_replace('/ <\?xmute(.|\s)*?>/', '', $xml);
+        return preg_replace('/<\?xmute(.|\s)*?>+/m', '', $xml, limit: -1);
     }
 }

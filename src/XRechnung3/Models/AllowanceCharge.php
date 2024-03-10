@@ -15,20 +15,20 @@ final class AllowanceCharge
     #[SerializedName('ChargeIndicator')]
     private ?bool $chargeIndicator = null;
 
-    #[Type('int')]
+    #[Type('string')]
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     #[SerializedName('AllowanceChargeReasonCode')]
-    private ?int $allowanceChargeReasonCode = null;
+    private ?string $allowanceChargeReasonCode = null;
 
     #[Type('string')]
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     #[SerializedName('AllowanceChargeReason')]
     private ?string $allowanceChargeReason = null;
 
-    #[Type('int')]
+    #[Type('string')]
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     #[SerializedName('MultiplierFactorNumeric')]
-    private ?int $multiplierFactorNumeric = null;
+    private ?string $multiplierFactorNumeric = null;
 
     #[Type(Amount::class)]
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]

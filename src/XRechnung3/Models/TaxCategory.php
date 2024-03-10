@@ -20,6 +20,11 @@ final class TaxCategory
     #[SerializedName('Percent')]
     private ?int $percent = null;
 
+    #[Type('string')]
+    #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[SerializedName('TaxExemptionReason')]
+    private ?string $taxExemptionReason = null;
+
     #[Type(TaxScheme::class)]
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     #[SerializedName('TaxScheme')]

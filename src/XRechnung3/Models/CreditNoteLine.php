@@ -41,6 +41,11 @@ final class CreditNoteLine
     #[SerializedName('OrderLineReference')]
     private ?OrderLineReference $orderLineReference = null;
 
+    #[Type(AllowanceCharge::class)]
+    #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[SerializedName('AllowanceCharge')]
+    private ?AllowanceCharge $allowanceCharge = null;
+
     #[Type('array<Bolzer\XRechnungUbl\XRechnung3\Models\Item>')]
     #[SerializedName('Item')]
     #[XmlList(entry: 'Item', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
