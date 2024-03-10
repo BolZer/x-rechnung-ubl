@@ -198,6 +198,7 @@ test(
                             ->setValue('336.9')
                     )
             )
+
             ->setInvoiceLine([
                 (new InvoiceLine())
                     ->setId(
