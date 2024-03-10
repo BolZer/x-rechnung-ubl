@@ -34,6 +34,10 @@ jobs:
                 run: |
                     composer install --no-interaction --prefer-dist --no-progress ${{ matrix.dependencies }}
 
+            -   name: Start KOSiT Validator
+                run: |
+                    docker-compose up -d
+
             -   name: Run tests
                 run: |
                     php /vendor/bin/pest
