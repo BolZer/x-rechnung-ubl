@@ -24,4 +24,37 @@ final class PartyLegalEntity
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     #[SerializedName('CompanyLegalForm')]
     private ?string $companyLegalForm = null;
+
+    public function getRegistrationName(): ?string
+    {
+        return $this->registrationName;
+    }
+
+    public function setRegistrationName(?string $registrationName): PartyLegalEntity
+    {
+        $this->registrationName = $registrationName;
+        return $this;
+    }
+
+    public function getId(): ?Id
+    {
+        return $this->id;
+    }
+
+    public function setId(?Id $id): PartyLegalEntity
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    public function getCompanyLegalForm(): ?string
+    {
+        return $this->companyLegalForm;
+    }
+
+    public function setCompanyLegalForm(?string $companyLegalForm): PartyLegalEntity
+    {
+        $this->companyLegalForm = $companyLegalForm;
+        return $this;
+    }
 }

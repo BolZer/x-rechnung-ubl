@@ -26,4 +26,15 @@ final class CreditNoteLine extends AbstractDocumentLine
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     #[SerializedName('CreditedQuantity')]
     private ?Quantity $creditedQuantity = null;
+
+    public function getCreditedQuantity(): ?Quantity
+    {
+        return $this->creditedQuantity;
+    }
+
+    public function setCreditedQuantity(?Quantity $creditedQuantity): CreditNoteLine
+    {
+        $this->creditedQuantity = $creditedQuantity;
+        return $this;
+    }
 }

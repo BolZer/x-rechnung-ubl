@@ -14,4 +14,15 @@ final class AccountingParty
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     #[SerializedName('Party')]
     private ?Party $party = null;
+
+    public function getParty(): ?Party
+    {
+        return $this->party;
+    }
+
+    public function setParty(?Party $party): AccountingParty
+    {
+        $this->party = $party;
+        return $this;
+    }
 }

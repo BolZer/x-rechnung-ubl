@@ -24,4 +24,37 @@ final class Contact
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     #[SerializedName('ElectronicMail')]
     private ?string $electronicMail = null;
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(?string $name): Contact
+    {
+        $this->name = $name;
+        return $this;
+    }
+
+    public function getTelephone(): ?string
+    {
+        return $this->telephone;
+    }
+
+    public function setTelephone(?string $telephone): Contact
+    {
+        $this->telephone = $telephone;
+        return $this;
+    }
+
+    public function getElectronicMail(): ?string
+    {
+        return $this->electronicMail;
+    }
+
+    public function setElectronicMail(?string $electronicMail): Contact
+    {
+        $this->electronicMail = $electronicMail;
+        return $this;
+    }
 }

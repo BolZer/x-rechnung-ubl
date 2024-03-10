@@ -19,4 +19,26 @@ final class PartyTaxScheme
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     #[SerializedName('TaxScheme')]
     private ?TaxScheme $taxScheme = null;
+
+    public function getCompanyId(): ?string
+    {
+        return $this->companyId;
+    }
+
+    public function setCompanyId(?string $companyId): PartyTaxScheme
+    {
+        $this->companyId = $companyId;
+        return $this;
+    }
+
+    public function getTaxScheme(): ?TaxScheme
+    {
+        return $this->taxScheme;
+    }
+
+    public function setTaxScheme(?TaxScheme $taxScheme): PartyTaxScheme
+    {
+        $this->taxScheme = $taxScheme;
+        return $this;
+    }
 }

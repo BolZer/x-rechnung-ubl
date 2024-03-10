@@ -14,4 +14,15 @@ final class TaxScheme
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     #[SerializedName('ID')]
     private ?string $id = null;
+
+    public function getId(): ?string
+    {
+        return $this->id;
+    }
+
+    public function setId(?string $id): TaxScheme
+    {
+        $this->id = $id;
+        return $this;
+    }
 }

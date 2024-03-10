@@ -24,4 +24,37 @@ final class TaxSubtotal
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     #[SerializedName('TaxCategory')]
     private ?TaxCategory $taxCategory = null;
+
+    public function getTaxableAmount(): ?Amount
+    {
+        return $this->taxableAmount;
+    }
+
+    public function setTaxableAmount(?Amount $taxableAmount): TaxSubtotal
+    {
+        $this->taxableAmount = $taxableAmount;
+        return $this;
+    }
+
+    public function getTaxAmount(): ?Amount
+    {
+        return $this->taxAmount;
+    }
+
+    public function setTaxAmount(?Amount $taxAmount): TaxSubtotal
+    {
+        $this->taxAmount = $taxAmount;
+        return $this;
+    }
+
+    public function getTaxCategory(): ?TaxCategory
+    {
+        return $this->taxCategory;
+    }
+
+    public function setTaxCategory(?TaxCategory $taxCategory): TaxSubtotal
+    {
+        $this->taxCategory = $taxCategory;
+        return $this;
+    }
 }

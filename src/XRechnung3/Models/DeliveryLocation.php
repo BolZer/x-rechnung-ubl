@@ -19,4 +19,26 @@ final class DeliveryLocation
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     #[SerializedName('Address')]
     private ?Address $address = null;
+
+    public function getId(): ?string
+    {
+        return $this->id;
+    }
+
+    public function setId(?string $id): DeliveryLocation
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    public function getAddress(): ?Address
+    {
+        return $this->address;
+    }
+
+    public function setAddress(?Address $address): DeliveryLocation
+    {
+        $this->address = $address;
+        return $this;
+    }
 }

@@ -19,4 +19,26 @@ final class OrderReference
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     #[SerializedName('SalesOrderID')]
     private ?string $salesOrderId = null;
+
+    public function getId(): ?string
+    {
+        return $this->id;
+    }
+
+    public function setId(?string $id): OrderReference
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    public function getSalesOrderId(): ?string
+    {
+        return $this->salesOrderId;
+    }
+
+    public function setSalesOrderId(?string $salesOrderId): OrderReference
+    {
+        $this->salesOrderId = $salesOrderId;
+        return $this;
+    }
 }

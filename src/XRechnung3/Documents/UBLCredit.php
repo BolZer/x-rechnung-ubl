@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Bolzer\XRechnungUbl\XRechnung3\Documents;
 
+use Bolzer\XRechnungUbl\XRechnung3\Models\CreditNoteLine;
 use JMS\Serializer\Annotation\AccessorOrder;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
@@ -53,8 +54,44 @@ final class UBLCredit extends UBLAbstractDocument
     #[SerializedName('TaxCurrencyCode')]
     private ?string $taxCurrencyCode = null;
 
+    /** @var CreditNoteLine[]|null */
     #[Type('array<Bolzer\XRechnungUbl\XRechnung3\Models\CreditNoteLine>')]
     #[SerializedName('CreditNoteLine')]
     #[XmlList(entry: 'CreditNoteLine', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private ?array $creditNoteLine = null;
+
+    public function getCreditNoteTypeCode(): ?int
+    {
+        return $this->creditNoteTypeCode;
+    }
+
+    public function setCreditNoteTypeCode(?int $creditNoteTypeCode): UBLCredit
+    {
+        $this->creditNoteTypeCode = $creditNoteTypeCode;
+        return $this;
+    }
+
+    public function getTaxCurrencyCode(): ?string
+    {
+        return $this->taxCurrencyCode;
+    }
+
+    public function setTaxCurrencyCode(?string $taxCurrencyCode): UBLCredit
+    {
+        $this->taxCurrencyCode = $taxCurrencyCode;
+        return $this;
+    }
+
+    /** @return CreditNoteLine[]|null */
+    public function getCreditNoteLine(): ?array
+    {
+        return $this->creditNoteLine;
+    }
+
+    /** @param CreditNoteLine[]|null $creditNoteLine */
+    public function setCreditNoteLine(?array $creditNoteLine): UBLCredit
+    {
+        $this->creditNoteLine = $creditNoteLine;
+        return $this;
+    }
 }

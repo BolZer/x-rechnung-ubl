@@ -24,4 +24,37 @@ final class PayeeFinancialAccount
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     #[SerializedName('FinancialInstitutionBranch')]
     private ?FinancialInstitutionBranch $financialInstitutionBranch = null;
+
+    public function getId(): ?Id
+    {
+        return $this->id;
+    }
+
+    public function setId(?Id $id): PayeeFinancialAccount
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(?string $name): PayeeFinancialAccount
+    {
+        $this->name = $name;
+        return $this;
+    }
+
+    public function getFinancialInstitutionBranch(): ?FinancialInstitutionBranch
+    {
+        return $this->financialInstitutionBranch;
+    }
+
+    public function setFinancialInstitutionBranch(?FinancialInstitutionBranch $financialInstitutionBranch): PayeeFinancialAccount
+    {
+        $this->financialInstitutionBranch = $financialInstitutionBranch;
+        return $this;
+    }
 }

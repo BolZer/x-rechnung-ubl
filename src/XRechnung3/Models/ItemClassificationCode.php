@@ -19,4 +19,26 @@ final class ItemClassificationCode
     #[Type('string')]
     #[XmlValue(cdata: false)]
     public ?string $value = null;
+
+    public function getListId(): ?string
+    {
+        return $this->listId;
+    }
+
+    public function setListId(?string $listId): ItemClassificationCode
+    {
+        $this->listId = $listId;
+        return $this;
+    }
+
+    public function getValue(): ?string
+    {
+        return $this->value;
+    }
+
+    public function setValue(?string $value): ItemClassificationCode
+    {
+        $this->value = $value;
+        return $this;
+    }
 }

@@ -14,4 +14,15 @@ final class Identification
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     #[SerializedName('ID')]
     private ?Id $id = null;
+
+    public function getId(): ?Id
+    {
+        return $this->id;
+    }
+
+    public function setId(?Id $id): Identification
+    {
+        $this->id = $id;
+        return $this;
+    }
 }

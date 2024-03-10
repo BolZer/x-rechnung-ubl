@@ -14,4 +14,15 @@ final class CommodityClassification
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     #[SerializedName('ItemClassificationCode')]
     private ?ItemClassificationCode $itemClassificationCode = null;
+
+    public function getItemClassificationCode(): ?ItemClassificationCode
+    {
+        return $this->itemClassificationCode;
+    }
+
+    public function setItemClassificationCode(?ItemClassificationCode $itemClassificationCode): CommodityClassification
+    {
+        $this->itemClassificationCode = $itemClassificationCode;
+        return $this;
+    }
 }

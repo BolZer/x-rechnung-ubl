@@ -19,4 +19,26 @@ final class DocumentReference
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     #[SerializedName('DocumentDescription')]
     private ?string $documentDescription = null;
+
+    public function getId(): ?string
+    {
+        return $this->id;
+    }
+
+    public function setId(?string $id): DocumentReference
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    public function getDocumentDescription(): ?string
+    {
+        return $this->documentDescription;
+    }
+
+    public function setDocumentDescription(?string $documentDescription): DocumentReference
+    {
+        $this->documentDescription = $documentDescription;
+        return $this;
+    }
 }

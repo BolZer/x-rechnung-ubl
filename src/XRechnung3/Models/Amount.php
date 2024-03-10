@@ -19,4 +19,26 @@ final class Amount
     #[Type('string')]
     #[XmlValue(cdata: false)]
     public ?string $value = null;
+
+    public function getCurrencyID(): ?string
+    {
+        return $this->currencyID;
+    }
+
+    public function setCurrencyID(?string $currencyID): Amount
+    {
+        $this->currencyID = $currencyID;
+        return $this;
+    }
+
+    public function getValue(): ?string
+    {
+        return $this->value;
+    }
+
+    public function setValue(?string $value): Amount
+    {
+        $this->value = $value;
+        return $this;
+    }
 }

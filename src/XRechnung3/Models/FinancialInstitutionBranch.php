@@ -14,4 +14,9 @@ final class FinancialInstitutionBranch
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     #[SerializedName('ID')]
     private ?Id $id = null;
+
+    public function getId(): ?Id
+    {
+        return $this->id;
+    }
 }

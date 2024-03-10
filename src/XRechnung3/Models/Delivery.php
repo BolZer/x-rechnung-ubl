@@ -24,4 +24,37 @@ final class Delivery
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     #[SerializedName('DeliveryParty')]
     private ?Party $deliveryParty = null;
+
+    public function getEndpointId(): ?string
+    {
+        return $this->endpointId;
+    }
+
+    public function setEndpointId(?string $endpointId): Delivery
+    {
+        $this->endpointId = $endpointId;
+        return $this;
+    }
+
+    public function getDeliveryLocation(): ?DeliveryLocation
+    {
+        return $this->deliveryLocation;
+    }
+
+    public function setDeliveryLocation(?DeliveryLocation $deliveryLocation): Delivery
+    {
+        $this->deliveryLocation = $deliveryLocation;
+        return $this;
+    }
+
+    public function getDeliveryParty(): ?Party
+    {
+        return $this->deliveryParty;
+    }
+
+    public function setDeliveryParty(?Party $deliveryParty): Delivery
+    {
+        $this->deliveryParty = $deliveryParty;
+        return $this;
+    }
 }

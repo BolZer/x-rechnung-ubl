@@ -24,4 +24,37 @@ final class PaymentMeans
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     #[SerializedName('PayeeFinancialAccount')]
     private ?PayeeFinancialAccount $payeeFinancialAccount = null;
+
+    public function getPaymentMeansCode(): ?string
+    {
+        return $this->paymentMeansCode;
+    }
+
+    public function setPaymentMeansCode(?string $paymentMeansCode): PaymentMeans
+    {
+        $this->paymentMeansCode = $paymentMeansCode;
+        return $this;
+    }
+
+    public function getPaymentId(): ?Id
+    {
+        return $this->paymentId;
+    }
+
+    public function setPaymentId(?Id $paymentId): PaymentMeans
+    {
+        $this->paymentId = $paymentId;
+        return $this;
+    }
+
+    public function getPayeeFinancialAccount(): ?PayeeFinancialAccount
+    {
+        return $this->payeeFinancialAccount;
+    }
+
+    public function setPayeeFinancialAccount(?PayeeFinancialAccount $payeeFinancialAccount): PaymentMeans
+    {
+        $this->payeeFinancialAccount = $payeeFinancialAccount;
+        return $this;
+    }
 }

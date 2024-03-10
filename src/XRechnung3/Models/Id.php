@@ -19,4 +19,26 @@ final class Id
     #[Type('string')]
     #[XmlValue(cdata: false)]
     public ?string $value = null;
+
+    public function getSchemeID(): ?string
+    {
+        return $this->schemeID;
+    }
+
+    public function setSchemeID(?string $schemeID): Id
+    {
+        $this->schemeID = $schemeID;
+        return $this;
+    }
+
+    public function getValue(): ?string
+    {
+        return $this->value;
+    }
+
+    public function setValue(?string $value): Id
+    {
+        $this->value = $value;
+        return $this;
+    }
 }

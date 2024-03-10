@@ -14,4 +14,15 @@ final class PartyName
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     #[SerializedName('Name')]
     private ?string $name = null;
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(?string $name): PartyName
+    {
+        $this->name = $name;
+        return $this;
+    }
 }

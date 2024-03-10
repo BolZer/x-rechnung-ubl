@@ -19,4 +19,26 @@ final class Period
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     #[SerializedName('EndDate')]
     private ?string $endDate = null;
+
+    public function getStartDate(): ?string
+    {
+        return $this->startDate;
+    }
+
+    public function setStartDate(?string $startDate): Period
+    {
+        $this->startDate = $startDate;
+        return $this;
+    }
+
+    public function getEndDate(): ?string
+    {
+        return $this->endDate;
+    }
+
+    public function setEndDate(?string $endDate): Period
+    {
+        $this->endDate = $endDate;
+        return $this;
+    }
 }

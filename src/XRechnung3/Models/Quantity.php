@@ -19,4 +19,26 @@ final class Quantity
     #[Type('string')]
     #[XmlValue(cdata: false)]
     public ?string $value = null;
+
+    public function getUnitCode(): ?string
+    {
+        return $this->unitCode;
+    }
+
+    public function setUnitCode(?string $unitCode): Quantity
+    {
+        $this->unitCode = $unitCode;
+        return $this;
+    }
+
+    public function getValue(): ?string
+    {
+        return $this->value;
+    }
+
+    public function setValue(?string $value): Quantity
+    {
+        $this->value = $value;
+        return $this;
+    }
 }
