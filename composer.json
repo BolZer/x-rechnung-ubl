@@ -3,9 +3,16 @@
     "description": "A package to read and create XRechnung in the UBL syntax",
     "type": "library",
     "license": "MIT",
+    "keywords": [
+        "XRechnung", "UBL", "PEPPOL"
+    ],
     "autoload": {
         "psr-4": {
-            "Bolzer\\XRechnungUbl\\": "src/",
+            "Bolzer\\XRechnungUbl\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "Bolzer\\XRechnungUblTests\\": "tests/"
         }
     },
