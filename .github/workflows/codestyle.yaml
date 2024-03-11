@@ -1,10 +1,10 @@
-name: Lint (PHPStan)
+name: Code Style (PHP-CS-Fixer)
 
 on:
     push:
-        branches: [ master ]
+        branches: [ main ]
     pull_request:
-        branches: [ master ]
+        branches: [ main ]
 
 jobs:
     build:
@@ -13,7 +13,7 @@ jobs:
         strategy:
             matrix:
                 include:
-                    - { operating-system: 'ubuntu-latest', php-version: '8.1', dependencies: '' }
+                    - { operating-system: 'ubuntu-latest', php-version: '8.2', dependencies: '' }
 
         name: PHP ${{ matrix.php-version }}
 
@@ -31,6 +31,6 @@ jobs:
                 run: |
                     composer install --no-interaction --prefer-dist --no-progress ${{ matrix.dependencies }}
 
-            -   name: Analyze code for issues
+            -   name: Check code style
                 run: |
-                    php vendor/bin/phpstan analyse src --level 9
+                    php vendor/bin/php-cs-fixer --using-cache=no --diff --dry-run --stop-on-violation --verbose fix
