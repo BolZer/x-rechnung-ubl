@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Bolzer\XRechnungUbl\XRechnung3\Documents;
 
 use Bolzer\XRechnungUbl\XRechnung3\Models\CreditNoteLine;
+use JetBrains\PhpStorm\Deprecated;
 use JMS\Serializer\Annotation\AccessorOrder;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
@@ -13,7 +14,8 @@ use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlRoot;
 
-#[XmlRoot('ubl:CreditNote')]
+/** @deprecated  */
+#[XmlRoot('CreditNote')]
 #[XmlNamespace(uri: 'urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2', prefix: '')]
 #[XmlNamespace(uri: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', prefix: 'cac')]
 #[XmlNamespace(uri: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', prefix: 'cbc')]
@@ -42,7 +44,7 @@ use JMS\Serializer\Annotation\XmlRoot;
     'taxTotal',
     'legalMonetaryTotal',
 ])]
-final class UBLCredit extends UBLAbstractDocument
+final class UBLLegacyCreditNote extends UBLAbstractDocument
 {
     #[Type('int')]
     #[XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
@@ -65,7 +67,7 @@ final class UBLCredit extends UBLAbstractDocument
         return $this->creditNoteTypeCode;
     }
 
-    public function setCreditNoteTypeCode(?int $creditNoteTypeCode): UBLCredit
+    public function setCreditNoteTypeCode(?int $creditNoteTypeCode): UBLLegacyCreditNote
     {
         $this->creditNoteTypeCode = $creditNoteTypeCode;
         return $this;
@@ -76,7 +78,7 @@ final class UBLCredit extends UBLAbstractDocument
         return $this->taxCurrencyCode;
     }
 
-    public function setTaxCurrencyCode(?string $taxCurrencyCode): UBLCredit
+    public function setTaxCurrencyCode(?string $taxCurrencyCode): UBLLegacyCreditNote
     {
         $this->taxCurrencyCode = $taxCurrencyCode;
         return $this;
@@ -89,7 +91,7 @@ final class UBLCredit extends UBLAbstractDocument
     }
 
     /** @param CreditNoteLine[]|null $creditNoteLine */
-    public function setCreditNoteLine(?array $creditNoteLine): UBLCredit
+    public function setCreditNoteLine(?array $creditNoteLine): UBLLegacyCreditNote
     {
         $this->creditNoteLine = $creditNoteLine;
         return $this;
