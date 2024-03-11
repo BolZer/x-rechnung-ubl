@@ -19,8 +19,7 @@
     "require": {
         "php": "^8.1",
         "ext-dom": "*",
-        "jms/serializer": "^3.30",
-        "ext-libxml": "*"
+        "jms/serializer": "^3.30"
     },
     "require-dev": {
         "pestphp/pest": "^2.34",
@@ -29,6 +28,7 @@
         "guzzlehttp/guzzle": "^7.8"
     },
     "config": {
+        "platform-check": false,
         "allow-plugins": {
             "pestphp/pest-plugin": true
         }
