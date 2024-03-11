@@ -8,10 +8,10 @@ use Bolzer\XRechnungUbl\XRechnung3\Documents\UBLAbstractDocument;
 use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\SerializerInterface;
 
-final class Reader
+final readonly class Reader
 {
     private function __construct(
-        private readonly SerializerInterface $serializer,
+        private SerializerInterface $serializer,
     ) {}
 
     /**
