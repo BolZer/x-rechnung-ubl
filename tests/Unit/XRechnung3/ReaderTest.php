@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Bolzer\XRechnungUblTests\Unit\XRechnung3;
 
 use Bolzer\XRechnungUbl\XRechnung3\Builder;
+use Bolzer\XRechnungUbl\XRechnung3\Documents\UBLInvoice;
 use Bolzer\XRechnungUbl\XRechnung3\Documents\UBLLegacyCreditNote;
 use Bolzer\XRechnungUbl\XRechnung3\Documents\UBLLegacyInvoice;
 use Bolzer\XRechnungUbl\XRechnung3\Reader;
@@ -340,5 +341,9 @@ test(
     [
         'ublDocumentClass' => UBLLegacyInvoice::class,
         'exampleFile' => __DIR__ . '/Examples/Reader/ubl-inv-peppol-en16931-r130-492-code-XRO.xml',
+    ],
+    [
+        'ublDocumentClass' => UBLInvoice::class,
+        'exampleFile' => __DIR__ . '/Examples/Reader/01.01a-INVOICE_ubl.xml',
     ],
 ]);
